@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Cube
+  - FreeCube
+  - Obstacle
+  - FinalLine
+  - Lava
+  - TurnLeft
+  - TurnRight
+  - Diamond
+  - 5X
+  - 4X
+  - 3X
+  - 2X
+  - X
+  - 10X
+  - EndMap
+  - Box
+  - Slide
+  - Speed
+  - RedPanel
+  - Ramp
+  - Barrel
+  - Plane
+  - YellowPanel
+  - BluePanel
+  - GreenPanel
+  - 9X
+  - 8X
+  - 7X
+  - 6X
+  - SpeedExit
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
