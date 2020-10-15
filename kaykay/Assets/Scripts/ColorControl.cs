@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ColorControl : MonoBehaviour
 {
-    public SelectedColor selectedColor = new SelectedColor();
+    /*public SelectedColor selectedColor = new SelectedColor();
     GameManager gameManager;
     private void Start()
     {
@@ -35,5 +35,5 @@ public class ColorControl : MonoBehaviour
         Green,
         Blue,
         Yellow
-    }
+    }*/
 }

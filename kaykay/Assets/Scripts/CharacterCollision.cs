@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,9 @@ public class CharacterCollision : MonoBehaviour
     [SerializeField] ColorControl thisColorControl;
     [SerializeField] Transform JumperObj;
     [SerializeField] MenuController menuController;
+    [SerializeField] private GameObject snowTrail;
+    [SerializeField] private GameObject snowEffect;
+    
     CoinController coinController;
     GameManager gameManager;
     Move move;
@@ -15,6 +19,7 @@ public class CharacterCollision : MonoBehaviour
     VoiceController voiceController;
     CameraFollow cameraFollow;
     AudioSource audioSource;
+    
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -28,15 +33,15 @@ public class CharacterCollision : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (animator.GetInteger("RandomJump") == 0 && other.tag == "Box") StartCoroutine(RandomJump(other.gameObject));
+        if (animator.GetInteger("RandomJump") == 0 && other.tag == "Box");
         else if (other.tag == "Slide") SlideAnim(other.transform);
         else if (other.tag == "Speed") SpeedUp();
         else if (other.tag == "SpeedExit") animator.SetBool("SpeedUp", false);
-        else if (other.tag == "RedPanel") ChangeColor(ColorControl.SelectedColor.Red);
-        else if (other.tag == "GreenPanel") ChangeColor(ColorControl.SelectedColor.Green);
-        else if (other.tag == "BluePanel") ChangeColor(ColorControl.SelectedColor.Blue);
-        else if (other.tag == "YellowPanel") ChangeColor(ColorControl.SelectedColor.Yellow);
-        else if (other.tag == "Ramp") Ramp();
+        //else if (other.tag == "RedPanel") ChangeColor(ColorControl.SelectedColor.Red);
+       // else if (other.tag == "GreenPanel") ChangeColor(ColorControl.SelectedColor.Green);
+        //else if (other.tag == "BluePanel") ChangeColor(ColorControl.SelectedColor.Blue);
+       // else if (other.tag == "YellowPanel") ChangeColor(ColorControl.SelectedColor.Yellow);
+        else if (other.tag == "Ramp"){ Ramp(); snowTrail.SetActive(false); snowEffect.SetActive(false);}
         else if (other.tag == "Diamond") GetDiamond(other.gameObject);
         else if (other.tag == "Barrel") StartCoroutine(BarrelAnim());
         else if (other.tag == "Lava")
@@ -49,6 +54,29 @@ public class CharacterCollision : MonoBehaviour
         else XControl(other.tag);
 
     }
+
+    private void Update()
+    {
+       
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        print(other.gameObject.tag);
+        if (other.gameObject.tag == "Plane")
+        {
+            snowTrail.SetActive(true);
+            snowEffect.SetActive(false);
+            
+        }
+        else
+        {
+            snowTrail.SetActive(false);
+            snowEffect.SetActive(true);
+           
+        }
+    }
+
     IEnumerator LavaAnim()
     {
         animator.SetBool("Lava", true);
@@ -110,13 +138,13 @@ public class CharacterCollision : MonoBehaviour
         yield return new WaitForSeconds(0.9f);
         animator.SetInteger("RandomJump", 0);
     }
-    void ChangeColor(ColorControl.SelectedColor color)
+    /*void ChangeColor(ColorControl.SelectedColor color)
     {
         voiceController.playVoice(audioSource, 2);
         Vibration.Vibrate(29);
         thisColorControl.selectedColor = color;
         thisColorControl.ChangeColor();
-    }
+    }*/
     void SlideAnim(Transform slide)
     {
         voiceController.playVoice(audioSource, 1, .3f);
@@ -127,11 +155,11 @@ public class CharacterCollision : MonoBehaviour
         animator.SetBool("Slide", true);
         Debug.Log( animator.GetBool("Slide"));
     }
-    IEnumerator RandomJump(GameObject item)
+   /* IEnumerator RandomJump(GameObject item)
     {
-        if (item.GetComponent<ColorControl>().selectedColor == thisColorControl.selectedColor)
+        /*if (item.GetComponent<ColorControl>().selectedColor == thisColorControl.selectedColor)
         {
-            animator.SetInteger("RandomJump", 1/*Random.Range(1, 3)*/);
+            animator.SetInteger("RandomJump", 1/*Random.Range(1, 3));
             yield return new WaitForSeconds(.5f);
             voiceController.playVoice(audioSource, 1);
             //  menuController.FeedBackAnim();
@@ -139,7 +167,7 @@ public class CharacterCollision : MonoBehaviour
             TrueColor();
         }
         else StartCoroutine(FalseColor(item.tag));
-    }
+    }*/
     IEnumerator FalseColor(string itemTag)
     {
         yield return new WaitForSeconds(.7f);
