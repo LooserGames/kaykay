@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -104,5 +105,10 @@ public class Move : MonoBehaviour
         if (tapAmount > 0)
             tapAmount -= .05f;
         menuController.setPowerBar(tapAmount);
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        
     }
 }
