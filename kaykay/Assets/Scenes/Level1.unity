@@ -8769,6 +8769,7 @@ MonoBehaviour:
   menuController: {fileID: 0}
   snowTrail: {fileID: 0}
   snowEffect: {fileID: 0}
+  snowTrailEffect: {fileID: 0}
 --- !u!1001 &792904491
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12577,6 +12578,7 @@ MonoBehaviour:
   DiamondCountText: {fileID: 497091877}
   cubeLevelText: {fileID: 1579201508}
   cubePriceText: {fileID: 645139447}
+  snowTrailEffect: {fileID: 1682648200}
   powerPanel: {fileID: 1194324656}
   powerBar: {fileID: 958507516}
   artiBir: {fileID: 0}
@@ -18585,6 +18587,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a01b2b35722424d4eac4e5b3cf021383, type: 3}
+--- !u!1 &1682648200 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8661779134432798143, guid: 82a2206cbc7e0ae4ba87cb6a93abb0c0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1520951196825301689}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1689504222
 GameObject:
   m_ObjectHideFlags: 0
@@ -24069,6 +24077,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2917367724139392843, guid: 5ba3debc60b986141a1520870845d6ca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2917367724182421107, guid: 5ba3debc60b986141a1520870845d6ca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24173,6 +24186,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462363790268033773, guid: 5ba3debc60b986141a1520870845d6ca,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6733178505506826740, guid: 5ba3debc60b986141a1520870845d6ca,
         type: 3}

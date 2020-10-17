@@ -828,6 +828,7 @@ MonoBehaviour:
   menuController: {fileID: 0}
   snowTrail: {fileID: 1520951197936448026}
   snowEffect: {fileID: 6633397715827976682}
+  snowTrailEffect: {fileID: 8661779134432798143}
 --- !u!114 &8079975882517720121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3820,6 +3821,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2230c9f74e1c364490f1bc5f38ca95c, type: 3}
+--- !u!1 &8661779134432798143 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7867598562183705956, guid: d2230c9f74e1c364490f1bc5f38ca95c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1520951197112242395}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1152841033574110317 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1937735045237785782, guid: d2230c9f74e1c364490f1bc5f38ca95c,

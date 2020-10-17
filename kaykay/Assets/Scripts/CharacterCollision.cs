@@ -10,6 +10,7 @@ public class CharacterCollision : MonoBehaviour
     [SerializeField] MenuController menuController;
     [SerializeField] private GameObject snowTrail;
     [SerializeField] private GameObject snowEffect;
+    [SerializeField] private GameObject snowTrailEffect;
     
     CoinController coinController;
     GameManager gameManager;
@@ -22,6 +23,7 @@ public class CharacterCollision : MonoBehaviour
     
     private void Start()
     {
+        
         audioSource = GetComponent<AudioSource>();
         cameraFollow = GameObject.Find("Main Camera").GetComponent<CameraFollow>();
         move = GetComponent<Move>();
@@ -30,6 +32,7 @@ public class CharacterCollision : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         coinController = gameManager.GetComponent<CoinController>();
         voiceController = gameManager.GetComponent<VoiceController>();
+        snowEffect.SetActive(false);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -41,7 +44,7 @@ public class CharacterCollision : MonoBehaviour
        // else if (other.tag == "GreenPanel") ChangeColor(ColorControl.SelectedColor.Green);
         //else if (other.tag == "BluePanel") ChangeColor(ColorControl.SelectedColor.Blue);
        // else if (other.tag == "YellowPanel") ChangeColor(ColorControl.SelectedColor.Yellow);
-        else if (other.tag == "Ramp"){ Ramp(); snowTrail.SetActive(false); snowEffect.SetActive(false);}
+        else if (other.tag == "Ramp"){ Ramp(); snowTrail.SetActive(false); snowTrailEffect.SetActive(false); snowEffect.SetActive(false);}
         else if (other.tag == "Diamond") GetDiamond(other.gameObject);
         else if (other.tag == "Barrel") StartCoroutine(BarrelAnim());
         else if (other.tag == "Lava")
@@ -67,12 +70,18 @@ public class CharacterCollision : MonoBehaviour
         {
             snowTrail.SetActive(true);
             snowEffect.SetActive(false);
+            if (snowTrailEffect.activeSelf)
+            {
+                snowTrailEffect.GetComponent<ParticleSystem>().Play();
+            }
             
         }
         else
         {
             snowTrail.SetActive(false);
             snowEffect.SetActive(true);
+            snowTrailEffect.SetActive(false);
+      
            
         }
     }
