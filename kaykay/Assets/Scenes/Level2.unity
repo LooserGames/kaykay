@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 3.12
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 767e91751e321b14281ca15a052bee5b, type: 2}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -14729,7 +14729,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.654902, g: 0.91764706, b: 1, a: 0.33333334}
+  m_BackGroundColor: {r: 0.654902, g: 0.91764706, b: 1, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -34838,6 +34838,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: KAYKAYGIYSI 1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909728153875980406, guid: 82a2206cbc7e0ae4ba87cb6a93abb0c0,
+        type: 3}
+      propertyPath: prewarm
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6633397715827976676, guid: 82a2206cbc7e0ae4ba87cb6a93abb0c0,
         type: 3}
