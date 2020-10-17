@@ -8764,6 +8764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6120b981268bf44b87184b587ba11e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameOver: {fileID: 0}
   thisColorControl: {fileID: 1618500377}
   JumperObj: {fileID: 1286076432}
   menuController: {fileID: 0}
@@ -22572,18 +22573,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 489180, guid: 626f1b816ba1ee64a9f7cea6ceb529cd, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5.8151
-      objectReference: {fileID: 0}
-    - target: {fileID: 489180, guid: 626f1b816ba1ee64a9f7cea6ceb529cd, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5.8151
-      objectReference: {fileID: 0}
-    - target: {fileID: 489180, guid: 626f1b816ba1ee64a9f7cea6ceb529cd, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 5.8151
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 626f1b816ba1ee64a9f7cea6ceb529cd, type: 3}
 --- !u!4 &2061418903 stripped
@@ -22754,6 +22743,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 503823951, guid: e2d8523763f720641bdd575cec510c78, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 503823951, guid: e2d8523763f720641bdd575cec510c78, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 503823951, guid: e2d8523763f720641bdd575cec510c78, type: 3}
+      propertyPath: m_Size.z
+      value: 2.1317272
+      objectReference: {fileID: 0}
+    - target: {fileID: 503823951, guid: e2d8523763f720641bdd575cec510c78, type: 3}
+      propertyPath: m_Center.z
+      value: -0.14119342
+      objectReference: {fileID: 0}
+    - target: {fileID: 503823951, guid: e2d8523763f720641bdd575cec510c78, type: 3}
+      propertyPath: m_Size.x
+      value: 3.0979183
+      objectReference: {fileID: 0}
+    - target: {fileID: 503823951, guid: e2d8523763f720641bdd575cec510c78, type: 3}
+      propertyPath: m_Center.x
+      value: 0.15212618
+      objectReference: {fileID: 0}
+    - target: {fileID: 503823951, guid: e2d8523763f720641bdd575cec510c78, type: 3}
+      propertyPath: m_Size.y
+      value: 2.7223656
+      objectReference: {fileID: 0}
+    - target: {fileID: 503823951, guid: e2d8523763f720641bdd575cec510c78, type: 3}
+      propertyPath: m_Center.y
+      value: -0.18455169
+      objectReference: {fileID: 0}
     - target: {fileID: 4590189524483204404, guid: e2d8523763f720641bdd575cec510c78,
         type: 3}
       propertyPath: selectedColor
@@ -22762,7 +22783,7 @@ PrefabInstance:
     - target: {fileID: 8121830044598292417, guid: e2d8523763f720641bdd575cec510c78,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8121830044598292417, guid: e2d8523763f720641bdd575cec510c78,
         type: 3}
@@ -22772,7 +22793,7 @@ PrefabInstance:
     - target: {fileID: 8121830044598292417, guid: e2d8523763f720641bdd575cec510c78,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.2
+      value: -72.15
       objectReference: {fileID: 0}
     - target: {fileID: 8121830044598292417, guid: e2d8523763f720641bdd575cec510c78,
         type: 3}
@@ -22818,6 +22839,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CircleBox (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8934395953261057403, guid: e2d8523763f720641bdd575cec510c78,
+        type: 3}
+      propertyPath: m_TagString
+      value: engel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2d8523763f720641bdd575cec510c78, type: 3}
@@ -24018,6 +24044,11 @@ PrefabInstance:
       propertyPath: menuController
       value: 
       objectReference: {fileID: 1057971163}
+    - target: {fileID: 8079975882517720120, guid: 82a2206cbc7e0ae4ba87cb6a93abb0c0,
+        type: 3}
+      propertyPath: GameOver
+      value: 
+      objectReference: {fileID: 637449258}
     - target: {fileID: 8079975882517720121, guid: 82a2206cbc7e0ae4ba87cb6a93abb0c0,
         type: 3}
       propertyPath: gameManager

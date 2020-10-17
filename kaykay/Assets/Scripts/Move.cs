@@ -110,5 +110,6 @@ public class Move : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         
+
     }
 }
