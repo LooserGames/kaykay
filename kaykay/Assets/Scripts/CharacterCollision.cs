@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class CharacterCollision : MonoBehaviour
 {
+    [SerializeField] GameObject GameOver;
     [SerializeField] ColorControl thisColorControl;
     [SerializeField] Transform JumperObj;
     [SerializeField] MenuController menuController;
@@ -36,15 +37,15 @@ public class CharacterCollision : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (animator.GetInteger("RandomJump") == 0 && other.tag == "Box");
+        if (animator.GetInteger("RandomJump") == 0 && other.tag == "Box") animator.SetInteger("RandomJump", 1);
         else if (other.tag == "Slide") SlideAnim(other.transform);
         else if (other.tag == "Speed") SpeedUp();
         else if (other.tag == "SpeedExit") animator.SetBool("SpeedUp", false);
-        //else if (other.tag == "RedPanel") ChangeColor(ColorControl.SelectedColor.Red);
-       // else if (other.tag == "GreenPanel") ChangeColor(ColorControl.SelectedColor.Green);
+        //else if (other.tag == "engel") StartCoroutine(FalseColor(other.tag));
+        // else if (other.tag == "GreenPanel") ChangeColor(ColorControl.SelectedColor.Green);
         //else if (other.tag == "BluePanel") ChangeColor(ColorControl.SelectedColor.Blue);
-       // else if (other.tag == "YellowPanel") ChangeColor(ColorControl.SelectedColor.Yellow);
-        else if (other.tag == "Ramp"){ Ramp(); snowTrail.SetActive(false); snowTrailEffect.SetActive(false); snowEffect.SetActive(false);}
+        // else if (other.tag == "YellowPanel") ChangeColor(ColorControl.SelectedColor.Yellow);
+        else if (other.tag == "Ramp") { Ramp(); snowTrail.SetActive(false); snowTrailEffect.SetActive(false); snowEffect.SetActive(false); }
         else if (other.tag == "Diamond") GetDiamond(other.gameObject);
         else if (other.tag == "Barrel") StartCoroutine(BarrelAnim());
         else if (other.tag == "Lava")
@@ -76,6 +77,7 @@ public class CharacterCollision : MonoBehaviour
             }
             
         }
+        else if (other.gameObject.tag == "engel") StartCoroutine(FalseColor(other.gameObject.tag));
         else
         {
             snowTrail.SetActive(false);
@@ -179,10 +181,10 @@ public class CharacterCollision : MonoBehaviour
     }*/
     IEnumerator FalseColor(string itemTag)
     {
-        yield return new WaitForSeconds(.7f);
-        animator.SetBool("Fail", true);
-        XControl(itemTag);
+        yield return new WaitForSeconds(.1f);
         //Time.timeScale -= .5f;
+        GameOver.SetActive(true);
+        Time.timeScale = 0;
     }
     void TrueColor()
     { 
