@@ -8,19 +8,23 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: PolyAdventureMaterial_Water_01
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 7889d64f407d35f4cbb164cd26da61d6,
+    type: 3}
   m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSION
-  m_LightmapFlags: 1
+  m_LightmapFlags: 6
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3050
-  stringTagMap:
-    RenderType: Transparent
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses:
   - SHADOWCASTER
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_271A6C1C:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -66,6 +70,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_5A5C3DCD: 1
+    - Vector1_6DD8C56E: 0
+    - Vector1_B718F5EA: 0.34
+    - Vector1_C1C90091: 1
     - _AlphaClip: 0
     - _Blend: 1
     - _BumpScale: 1
@@ -93,6 +101,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 0
     m_Colors:
+    - Color_CFB60627: {r: 0.5896226, g: 0.9405016, b: 1, a: 0}
+    - Color_D6E78633: {r: 0.5921569, g: 0.9411765, b: 1, a: 0}
     - _BaseColor: {r: 0.6985294, g: 0.82535493, b: 1, a: 0.24705882}
     - _Color: {r: 0.6985294, g: 0.82535493, b: 1, a: 0.24705882}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
