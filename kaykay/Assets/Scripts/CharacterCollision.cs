@@ -12,6 +12,7 @@ public class CharacterCollision : MonoBehaviour
     [SerializeField] private GameObject snowTrail;
     [SerializeField] private GameObject snowEffect;
     [SerializeField] private GameObject snowTrailEffect;
+    [SerializeField] private GameObject Avaranche;
     
     CoinController coinController;
     GameManager gameManager;
@@ -21,6 +22,8 @@ public class CharacterCollision : MonoBehaviour
     VoiceController voiceController;
     CameraFollow cameraFollow;
     AudioSource audioSource;
+    private float zOffset=3f;
+    [SerializeField]private float avarancheSpeed;
     
     private void Start()
     {
@@ -34,6 +37,7 @@ public class CharacterCollision : MonoBehaviour
         coinController = gameManager.GetComponent<CoinController>();
         voiceController = gameManager.GetComponent<VoiceController>();
         snowEffect.SetActive(false);
+       
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -41,10 +45,16 @@ public class CharacterCollision : MonoBehaviour
         else if (other.tag == "Slide") SlideAnim(other.transform);
         else if (other.tag == "Speed") SpeedUp();
         else if (other.tag == "SpeedExit") animator.SetBool("SpeedUp", false);
-        //else if (other.tag == "engel") StartCoroutine(FalseColor(other.tag));
-        // else if (other.tag == "GreenPanel") ChangeColor(ColorControl.SelectedColor.Green);
-        //else if (other.tag == "BluePanel") ChangeColor(ColorControl.SelectedColor.Blue);
-        // else if (other.tag == "YellowPanel") ChangeColor(ColorControl.SelectedColor.Yellow);
+        else if (other.tag == "fidan")
+        {
+            if (zOffset < 5)
+            {
+                if (avarancheSpeed > 3)
+                {
+                    avarancheSpeed--;
+                }
+            }
+        }
         else if (other.tag == "Ramp") { Ramp(); snowTrail.SetActive(false); snowTrailEffect.SetActive(false); snowEffect.SetActive(false); }
         else if (other.tag == "Diamond") GetDiamond(other.gameObject);
         else if (other.tag == "Barrel") StartCoroutine(BarrelAnim());
@@ -61,7 +71,15 @@ public class CharacterCollision : MonoBehaviour
 
     private void Update()
     {
-       
+        if (Avaranche.activeSelf)
+        {
+            Avaranche.transform.position += Vector3.forward * Time.deltaTime * avarancheSpeed;
+        }
+
+        if (Avaranche.transform.position.z>transform.position.z)
+        {
+            avarancheSpeed = 0;
+        }
     }
 
     private void OnCollisionEnter(Collision other)
@@ -77,7 +95,7 @@ public class CharacterCollision : MonoBehaviour
             }
             
         }
-        else if (other.gameObject.tag == "engel") StartCoroutine(FalseColor(other.gameObject.tag));
+        //else if (other.gameObject.tag == "engel") StartCoroutine(FalseColor(other.gameObject.tag));
         else
         {
             snowTrail.SetActive(false);
