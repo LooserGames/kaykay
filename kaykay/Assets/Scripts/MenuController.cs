@@ -86,13 +86,13 @@ public class MenuController : MonoBehaviour
             GetCubeLevel();
         }
     }
-    public void ClaimButton(int nextLevel)
+    public void ClaimButton()
     {
-        levelController.WinLevel(winDiamond, nextLevel);
+        levelController.WinGame();
     }
     public void RetryButton()
     {
-        levelController.RestartLevel();
+        levelController.LoseGame();
     }
 
     public void AddCoin()
