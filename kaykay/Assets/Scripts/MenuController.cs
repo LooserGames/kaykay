@@ -21,6 +21,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] TextMeshProUGUI cubeLevelText;
     [SerializeField] TextMeshProUGUI cubePriceText;
     [SerializeField] private GameObject snowTrailEffect;
+    [SerializeField] private GameObject avaranche;
     public GameObject powerPanel;
     [SerializeField] Image powerBar;
     [SerializeField] Animation artiBir;
@@ -44,6 +45,7 @@ public class MenuController : MonoBehaviour
         }
         GetCubeLevel();
         snowTrailEffect.SetActive(false);
+        avaranche.SetActive(false);
         
     }
     private void Update()
@@ -58,6 +60,7 @@ public class MenuController : MonoBehaviour
         mainMenu.SetActive(false);
         gameManager.state = GameManager.State.Play;
         snowTrailEffect.SetActive(true);
+        avaranche.SetActive(true);
     }
 
     public void GameOver(int diamondX,int collectedDiamond)
